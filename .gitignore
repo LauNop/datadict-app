@@ -1,3 +1,5 @@
 venv/
 .idea/
 *__pycache__/
+documenter_config.yaml
+env/.env
