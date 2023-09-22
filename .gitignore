@@ -3,3 +3,6 @@ venv/
 *__pycache__/
 documenter_config.yaml
 env/.env
+dist/
+app.spec
+build/
