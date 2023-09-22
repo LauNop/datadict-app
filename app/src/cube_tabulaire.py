@@ -31,7 +31,7 @@ class CubeTabulaire(FileSelection):
             files_path_list = self.get_files(".xmla")
             for file_path in files_path_list:
                 etcc_obj = etcc(file_path)
-                etcc_obj.save(self.save_path_var)
+                etcc_obj.save(str(self.save_path_var.get()))
         else:
             self.show_warning_popup()
         return

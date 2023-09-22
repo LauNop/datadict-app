@@ -33,7 +33,7 @@ class FileSelection(tk.Toplevel,ABC):
         self.save_path_entry.grid(row=3, column=0, padx=10, pady=10, columnspan=2)
 
         # Create a Browse button for file selection
-        self.save_browse_button = tk.Button(self, text="Browse save folder", command=self.browse_file_or_folder)
+        self.save_browse_button = tk.Button(self, text="Browse save folder", command=self.browse_save_dir)
         self.save_browse_button.grid(row=4, column=0, padx=10, pady=10, columnspan=2)
 
         # Create a Generate Data Dict button
@@ -63,8 +63,11 @@ class FileSelection(tk.Toplevel,ABC):
     def get_files(self,file_type):
         if self.path_var.get():
             selected_folder = self.path_var.get()
-            selected_files = [os.path.join(selected_folder, f) for f in os.listdir(selected_folder)
-                              if os.path.isfile(os.path.join(selected_folder, f)) and f.endswith(file_type)]
+            if os.path.isdir(selected_folder):
+                selected_files = [os.path.join(selected_folder, f) for f in os.listdir(selected_folder)
+                                  if os.path.isfile(os.path.join(selected_folder, f)) and f.endswith(file_type)]
+            else:
+                selected_files = [selected_folder]
             return selected_files
         else:
             return

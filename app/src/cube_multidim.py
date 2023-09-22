@@ -31,7 +31,8 @@ class CubeMultidim(FileSelection):
             files_path_list = self.get_files(".xmla")
             for file_path in files_path_list:
                 emcc_obj = emcc(file_path)
-                emcc_obj.save(self.save_path_var)
+                # print(emcc_obj.cube_struct)
+                emcc_obj.save(str(self.save_path_var.get()))
         else:
             self.show_warning_popup()
         return
