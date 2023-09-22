@@ -16,8 +16,9 @@ class RequeteSQLSelect(FileSelection):
         return
 
     def generate_data_dict(self):
-        files_path_list = super().generate_data_dict()
-        for file_path in files_path_list:
-            # Instance SelectGPTDeduce
-            print(file_path)
+        # Instance SelectGPTDeduce
+        # We need openai_organization, openai_api_key, sql_query=None, model_name="gpt-4",
+        #         response_file_name="model_response", answer_file=None, excel_name = "data_dict",
+        #         destination_table = None
+        print("Processing")
         return
