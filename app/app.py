@@ -1,5 +1,5 @@
 import tkinter as tk
-from home_window import HomeWindow
+from src import HomeWindow
 
 if __name__ == "__main__":
     root = tk.Tk()

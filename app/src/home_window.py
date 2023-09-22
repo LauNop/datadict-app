@@ -1,7 +1,7 @@
 import tkinter as tk
-from cube_multidim import CubeMultidim
-from cube_tabulaire import CubeTabulaire
-from requete_sql_select import RequeteSQLSelect
+from .cube_multidim import CubeMultidim
+from .cube_tabulaire import CubeTabulaire
+from .requete_sql_select import RequeteSQLSelect
 
 class HomeWindow(tk.Frame):
     def __init__(self, master=None):
