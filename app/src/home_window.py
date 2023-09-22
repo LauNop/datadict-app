@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from .cube_multidim import CubeMultidim
 from .cube_tabulaire import CubeTabulaire
 from .requete_sql_select import RequeteSQLSelect
@@ -29,5 +30,9 @@ class HomeWindow(tk.Frame):
         return
 
     def open_requete_sql_select(self):
-        requete_sql_select_window = RequeteSQLSelect(self.master)
+        self.show_information_popup()
+        return
+
+    def show_information_popup(self):
+        messagebox.showinfo("Work in progress", "Feature not operational.")
         return
